@@ -1,22 +1,18 @@
-import urllib,urllib.request
 from colorama import *
+import urllib,urllib.request
 import subprocess
 
 def downloadcode():
     subprocess.run(['clear']);
     url=input(Fore.GREEN+"url: ");
-    nombre=input("nombre: ");
+    nombre=input(Fore.GREEN+"nombre: ");
     try:
-        print(Fore.YELLOW+"descargando "+url+"../");
+        print(Fore.YELLOW+"descargando "+url+".../")
         html_handler=urllib.request.urlopen(url);
-        html_file=str(html_handler.read(),'utf-8');
+        html_file=str(html_handler.read());
         archivo=open(nombre,'w');
         archivo.write(html_file);
-        print(Fore.BLUE+"descargado completamente!!!");
+        print(Fore.BLUE+"descargado correctamente!!");
     except KeyboardInterrupt:
-        print(Fore.RED+"\nFinalisado!!!");
-    except urllib.error.HTTPError:
-        print(Fore.RED+"\nurl no encontrada");
+        print(Fore.RED+"\nfinalisado!!!");
 downloadcode();
-
-
